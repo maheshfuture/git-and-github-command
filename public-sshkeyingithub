@@ -1,0 +1,14 @@
+-ssh-keygen -t rsa -b 4096 -C "email@example.com" // to create your set of keys both public and private key and save it into a file
+-vim ~/.ssh/config // to open up the file you created which contains the keys
+-[ Host *
+AddKeysToAgent yes
+UserKeychain yes
+IdentityFile ~/.ssh/id_rsa ] // paste this line of code in the [ ] in the file you create after executing the vim ~/.ssh/config command
+
+ls | grep gitkey // to display the keys created
+cat key_name // to display the content of any key created
+ssh-agent -s // to start the ssh-agent in the background
+vim ~/.ssh/config // to configure the created file which contains the keys
+ssh-add -K ~/.ssh/private_key_name // to add the private key to the ssh agent
+The above commands should help you setup your ssh keys properly
+@ayish1998 hope this was helpful
